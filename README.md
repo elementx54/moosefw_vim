@@ -9,7 +9,8 @@ INSTALLING
 ----------
 Inside the users home VIM directory (on Linux ".vim") copy the contents of each
 subdirectory into the corresponding subdirectory. If a subdirectory does not
-exist then create that subdirectory.
+exist then create that subdirectory. Ensure that syntax, indentation, and
+folding is on by filetype.
 
 CUSTOMIZATION
 -------------
