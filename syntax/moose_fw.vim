@@ -35,6 +35,7 @@ syn match mooComment "\v\#.*$" contains=mooTodo
 " Define block regions
 syn region mooTopBlock start="\v\[(\w|\-)*\w\]" end="\v\[\]" fold transparent contains=ALLBUT,mooTodo,mooSubWord
 syn region mooSubBlock matchgroup=mooSubWord start="\v\[\.\/(\w|\-)*\]" end="\v\[\.\.\/\]" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord
+syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
 " Thanks Daniel! :D
