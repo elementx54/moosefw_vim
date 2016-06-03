@@ -16,4 +16,9 @@ CUSTOMIZATION
 -------------
 Feel free to change highlighting colors in the syntax/moose_fw.vim file.
 Actually, feel free to change anything. This is pretty simple.
+I've also found it handy to syntax highlight the dump files (--dump) when
+output into a file. You can either make the file extension match an input file
+extension or tell Vim directly the filetype.
+To tell Vim the filetype, place '# vi:filetype=moose_fw' at either the top or
+bottom of the file.
 
