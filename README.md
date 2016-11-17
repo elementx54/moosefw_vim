@@ -1,12 +1,12 @@
-INTRODUCTION
-------
+## INTRODUCTION
+---
 To help make writing MOOSE input files easier on a common editor found on
-almost all remote computation resources, I want to make VIM files that do the
-style right, highlight keywords, do folding, and might check for open blocks
-or unmatched open-close pairs.
+almost all remote computation resources, I want to make a VIM plugin that does
+the style right, highlights keywords, does folding, and might check for open
+blocks or unmatched open-close pairs.
 
-INSTALLING
-------
+## INSTALLING
+---
 ### Manual Method
 Inside the users home VIM directory (on Linux `.vim`) copy the contents of each
 subdirectory into the corresponding subdirectory. If a subdirectory does not
@@ -22,8 +22,8 @@ Plugin 'elementx54/moosefw_vim.git'
 ```
 Then update your plugins with the command `:PluginInstall` when running `vim`.
 
-CUSTOMIZATION
-------
+## CUSTOMIZATION
+---
 Feel free to change highlighting colors in the `syntax/moose_fw.vim` file or
 place a custom syntax file in the vim `after` directory. Actually, feel free to
 change anything.
@@ -33,3 +33,26 @@ extension or tell Vim directly the filetype.
 To tell Vim the filetype, place `# vi:filetype=moose_fw` at either the top or
 bottom of the file.
 
+## INFORMATION
+---
+### MOOSE Input Format
+MOOSE input format is a [GetPot](http://getpot.sourceforge.net/) input
+structure. The syntax coloring is provided specifically for MOOSE keywords and
+can be customized. MOOSE input files traditionally end with `*.i`, but any
+ending may be used as this plugin can search the input file's beginning
+lines looking for a `[*Opening*]` and `[]` closing pair. This plugin identifies
+MOOSE input files as being `filetype=moose_fw`. The `moose_fw` stands for
+__MOOSE__ __F__rame__w__ork.
+
+### Default Configuration Values
+The number of lines to search the beginning of a file for a section pair of
+bracket sets `[]` identifying the file as a `moose_fw` filetype.
+```vim
+let g:moo_fw_search_lines = 50  " Defaults to 50 lines.
+```
+  
+To disable searching files for bracket pairs identifying the file as a
+`moose_fw` filetype, simply create the global variable.
+```vim
+let g:moo_fw_search_file_disable = 1  " Defaults to being enabled.
+```

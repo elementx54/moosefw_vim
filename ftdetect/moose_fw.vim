@@ -17,13 +17,17 @@ au BufRead,BufNewFile *.i set filetype=moose_fw
 " IMPORTANT: The space between # and vi is required.
 
 " Detect file based on if contains a [Opener] and [] closer block.
-"   Change the check_lines variable if loading files becomes slow.
+"   let g:moo_fw_search_lines = 'smaller number' variable if loading files
+"   becomes slow.
 function! s:CheckMOOSEfwInput()
     if &filetype == "moose_fw"
         return
     endif
     " Check certain number of lines
-    let check_lines = 50
+    if !exists('g:moo_fw_search_lines')
+        let g:moo_fw_search_lines = 50
+    endif
+    let check_lines = g:moo_fw_search_lines
     let c = 1
     while c <= check_lines
         if getline(c) =~ '\[\w*\w\]'
@@ -42,7 +46,9 @@ function! s:CheckMOOSEfwInput()
     endwhile
 endfunction
 
-if !exists("autocommands_loaded")
-    let autocommands_loaded = 1
-    au BufRead * call s:CheckMOOSEfwInput()
+if !exists('g:moo_fw_search_file_disable')
+    if !exists("autocommands_loaded")
+        let autocommands_loaded = 1
+        au BufRead * call s:CheckMOOSEfwInput()
+    endif
 endif
