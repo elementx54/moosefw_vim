@@ -42,7 +42,7 @@ can be customized. MOOSE input files traditionally end with `*.i`, but any
 ending may be used as this plugin can search the input file's beginning
 lines looking for a `[*Opening*]` and `[]` closing pair. This plugin identifies
 MOOSE input files as being `filetype=moose_fw`. The `moose_fw` stands for
-__MOOSE__ __F__rame__w__ork.
+_MOOSE Framework_.
 
 ### Default Configuration Values
 The number of lines to search the beginning of a file for a section pair of
