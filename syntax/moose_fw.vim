@@ -34,7 +34,7 @@ syn match mooComment "\v\#.*$" contains=mooTodo
 "" Keyword Matching
 " Define block regions
 syn region mooTopBlock start="\v\[(\w|\-)*\w\]" end="\v\[\]" fold transparent contains=ALLBUT,mooTodo,mooSubWord
-syn region mooSubBlock matchgroup=mooSubWord start="\v\[\.\/(\w|\-|\*)*\]" end="\v\[\.\.\/\]" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord
+syn region mooSubBlock matchgroup=mooSubWord start="\v\[\.\/(\w|\-|\*|\<|\>)*\]" end="\v\[\.\.\/\]" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord
 syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
@@ -58,7 +58,7 @@ syn match mooType "\v<type((\s|\t)+)*\=" contained
 syn match mooActive "\v<active((\s|\t)+)*\=" contained
 
 " MOOSE sub-block words can be anything.
-syn match mooSubWord "\v\[\.\/(\w|\-|\*)*\]" contained
+syn match mooSubWord "\v\[\.\/(\w|\-|\*|\<|\>)*\]" contained
 
 "" Highlighting Links
 " Set the script has run
