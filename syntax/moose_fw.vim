@@ -8,9 +8,9 @@ if exists("b:current_syntax")
 endif
 
 "" Number Matching
-" Integer with - + or nothing in front
-syn match mooInteger "\v\d+" display
-syn match mooInteger "\v[-+]\d+" display
+" Integer with - + or nothing in front and not part of a word
+syn match mooInteger "\v\w@<!\d+\w@!" display
+syn match mooInteger "\v\w@<![-+]\d+\w@!" display
 
 " Floating point number with decimal no E or e 
 syn match mooFloat "\v\d+\.\d*" display
