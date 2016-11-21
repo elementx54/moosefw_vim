@@ -1,9 +1,9 @@
 ## INTRODUCTION
 ---
-To help make writing MOOSE input files easier on a common editor found on
-almost all remote computation resources, I want to make a VIM plugin that does
-the style right, highlights keywords, does folding, and might check for open
-blocks or unmatched open-close pairs.
+To help make writing [MOOSE](http://mooseframework.org/) input files easier on
+a common editor found on almost all remote computation resources, I want to
+make a VIM plugin that does the style right, highlights keywords, does folding,
+and might check for open blocks or unmatched open-close pairs.
 
 ## INSTALLING
 ---
