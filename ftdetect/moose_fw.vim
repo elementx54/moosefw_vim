@@ -1,7 +1,7 @@
 " Vim file to detect MOOSE framework input files.
 " Languages: MOOSE Framework input
 " Creator: Xenon54z
-" Latest Revision: January 2016
+" Latest Revision: January 2017
 
 " Detect file based on extension
 " Common input extension is .i
@@ -30,11 +30,11 @@ function! s:CheckMOOSEfwInput()
     let check_lines = g:moo_fw_search_lines
     let c = 1
     while c <= check_lines
-        if getline(c) =~ '\[\w*\w\]'
+        if getline(c) =~ '\v^\[(\w|\-)*\w\]'
             " Found a opener
             let sub = 1
             while sub <= check_lines
-                if getline(c + sub) =~ '\[\]'
+                if getline(c + sub) =~ '\v^\[\]'
                     set filetype=moose_fw
                     let sub += check_lines
                     let c += check_lines

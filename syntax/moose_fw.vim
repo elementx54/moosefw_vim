@@ -1,7 +1,7 @@
 " Vim syntax file for MOOSE framework input files.
 " Language: MOOSE Framework input file
 " Creator: Xenon54z
-" Latest Revision: January 2016
+" Latest Revision: January 2017
 
 if exists("b:current_syntax")
     finish
@@ -33,7 +33,7 @@ syn match mooComment "\v\#.*$" contains=mooTodo
 
 "" Keyword Matching
 " Define block regions
-syn region mooTopBlock start="\v\[(\w|\-)*\w\]" end="\v\[\]" fold contains=ALLBUT,mooTodo,mooSubWord
+syn region mooTopBlock start="\v^\[(\w|\-)*\w\]" end="\v^\[\]" fold contains=ALLBUT,mooTodo,mooSubWord
 syn region mooSubBlock matchgroup=mooSubWord start="\v\[\.\/(\w|\-|\*|\<|\>)*\]" end="\v\[\.\.\/\]" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord
 syn sync fromstart
 
