@@ -25,7 +25,7 @@ Then update your plugins with the command `:PluginInstall` when running `vim`.
 ## CUSTOMIZATION
 ---
 Feel free to change highlighting colors in the `syntax/moose_fw.vim` file or
-place a custom syntax file in the vim `after` directory. Actually, feel free to
+place a custom syntax file in the Vim `after` directory. Actually, feel free to
 change anything.
 I've also found it handy to syntax highlight the dump files (`--dump`) when
 output into a file. You can either make the file extension match an input file
@@ -43,6 +43,11 @@ ending may be used as this plugin can search the input file's beginning
 lines looking for a `[*Opening*]` and `[]` closing pair. This plugin identifies
 MOOSE input files as being `filetype=moose_fw`. The `moose_fw` stands for
 _MOOSE Framework_.
+
+Although indentation formatting is not required, this plugin includes 
+indentation formatting based on user indentation settings. Auto-indentation
+occurs as text is entered, both forward and backward indents. To fix indents on
+an entire input file, use the Vim command in normal mode `gg=G`.
 
 ### Default Configuration Values
 The number of lines to search the beginning of a file for a section pair of
