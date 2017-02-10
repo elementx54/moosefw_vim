@@ -49,22 +49,22 @@ function! GetMOOSEfwIndent( line_num )
     
     " Begin the definitions of keywords for indent changing
     " Top Opener (such as [Kernels] )
-    if prev_codeline =~ '\[\w*\w\]'
+    if prev_codeline =~? '\v^\[(\w|\-)*\w\]'
         return indnt + &shiftwidth
     endif
 
     " Sub Opener (such as [./sub] )
-    if prev_codeline =~ '\[\.\/\w*\]'
+    if prev_codeline =~? '\v\[\.\/(\w|\-|\*|\<|\>)*\]'
         return indnt + &shiftwidth
     endif
     
     " Top Closer []
-    if this_codeline =~ '\[\]'
+    if this_codeline =~? '\[\]'
         return indnt - &shiftwidth
     endif
 
     " Sub Closer [../]
-    if this_codeline =~ '\[\.\.\/\]'
+    if this_codeline =~? '\[\.\.\/\]'
         return indnt - &shiftwidth
     endif
     

@@ -5,7 +5,9 @@
 
 " Detect file based on extension
 " Common input extension is .i
-au BufRead,BufNewFile *.i set filetype=moose_fw
+augroup moosefw_plugin
+    au BufRead,BufNewFile *.i set filetype=moose_fw
+augroup END
 
 " Example: MOOSE Framework input (*.moo)
 "au BufRead,BufNewFile *.moo set filetype=moose_fw
@@ -20,7 +22,7 @@ au BufRead,BufNewFile *.i set filetype=moose_fw
 "   let g:moo_fw_search_lines = 'smaller number' variable if loading files
 "   becomes slow.
 function! s:CheckMOOSEfwInput()
-    if &filetype == "moose_fw"
+    if &filetype ==? "moose_fw"
         return
     endif
     " Check certain number of lines
@@ -30,11 +32,11 @@ function! s:CheckMOOSEfwInput()
     let check_lines = g:moo_fw_search_lines
     let c = 1
     while c <= check_lines
-        if getline(c) =~ '\v^\[(\w|\-)*\w\]'
-            " Found a opener
+        if getline(c) =~? '\v^\[(\w|\-)*\w\]'
+            " Found an opener
             let sub = 1
             while sub <= check_lines
-                if getline(c + sub) =~ '\v^\[\]'
+                if getline(c + sub) =~? '\v^\[\]'
                     set filetype=moose_fw
                     let sub += check_lines
                     let c += check_lines
