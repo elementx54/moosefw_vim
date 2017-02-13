@@ -49,6 +49,12 @@ indentation formatting based on user indentation settings. Auto-indentation
 occurs as text is entered, both forward and backward indents. To fix indents on
 an entire input file, use the Vim command in normal mode `gg=G`.
 
+The style of folding is left up to each individual user. Folding by syntax or
+indent can be set locally with an autocommand place in the `.vimrc` file.
+```vim
+autocmd FileType moose_fw setlocal foldmethod=syntax|indent foldignore=
+```
+
 ### Default Configuration Values
 The number of lines to search the beginning of a file for a section pair of
 bracket sets `[]` identifying the file as a `moose_fw` filetype.
