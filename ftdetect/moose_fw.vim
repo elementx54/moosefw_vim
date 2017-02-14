@@ -5,9 +5,7 @@
 
 " Detect file based on extension
 " Common input extension is .i
-augroup moosefw_plugin
-    au BufRead,BufNewFile *.i set filetype=moose_fw
-augroup END
+autocmd BufRead,BufNewFile *.i set filetype=moose_fw
 
 " Example: MOOSE Framework input (*.moo)
 "au BufRead,BufNewFile *.moo set filetype=moose_fw
@@ -49,8 +47,8 @@ function! s:CheckMOOSEfwInput()
 endfunction
 
 if !exists('g:moo_fw_search_file_disable')
-    if !exists("autocommands_loaded")
-        let autocommands_loaded = 1
-        au BufRead * call s:CheckMOOSEfwInput()
+    if !exists("autocommands_loaded_mfw")
+        let autocommands_loaded_mfw = 1
+        autocmd BufRead * call s:CheckMOOSEfwInput()
     endif
 endif
