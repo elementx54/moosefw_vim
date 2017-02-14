@@ -21,8 +21,8 @@ endif
 "" Functions for indenting correctly
 " Check previous line's indentation
 function! s:GetPrevNonCommentLineNum( line_num )
-    " Skip lines starting with a comment
-    let SKIP_LINES = "\v^\#.*$"
+    " Skip lines starting with a comment (Had to add start with to definition)
+    execute 'let SKIP_LINES = "\v^' . g:moose_fw_variables_comment[2:] . '"'
     let nline = a:line_num
     while nline > 0
         let nline = prevnonblank(nline-1)
@@ -49,22 +49,22 @@ function! GetMOOSEfwIndent( line_num )
     
     " Begin the definitions of keywords for indent changing
     " Top Opener (such as [Kernels] )
-    if prev_codeline =~? '\v^\[(\w|\-)*\w\]'
+    if prev_codeline =~? g:moose_fw_variables_topstart
         return indnt + &shiftwidth
     endif
 
     " Sub Opener (such as [./sub] )
-    if prev_codeline =~? '\v\[\.\/(\w|\-|\*|\<|\>)*\]'
+    if prev_codeline =~? g:moose_fw_variables_substart
         return indnt + &shiftwidth
     endif
     
-    " Top Closer []
-    if this_codeline =~? '\[\]'
+    " Top Closer [] (When not at beginning)
+    if this_codeline =~? g:moose_fw_variables_topend[3:]
         return indnt - &shiftwidth
     endif
 
     " Sub Closer [../]
-    if this_codeline =~? '\[\.\.\/\]'
+    if this_codeline =~? g:moose_fw_variables_subend
         return indnt - &shiftwidth
     endif
     

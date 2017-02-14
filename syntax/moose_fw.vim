@@ -29,12 +29,14 @@ syn keyword mooBoolean true false
 
 " Todo's and Notes and Comments
 syn keyword mooTodo contained TODO todo Todo FIXME fixme Fixme NOTE Note note
-syn match mooComment "\v\#.*$" contains=mooTodo
+execute 'syn match mooComment "' . g:moose_fw_variables_comment . '" contains=mooTodo'
 
 "" Keyword Matching
 " Define block regions
-syn region mooTopBlock start="\v^\[(\w|\-)*\w\]" end="\v^\[\]" fold contains=ALLBUT,mooTodo,mooSubWord
-syn region mooSubBlock matchgroup=mooSubWord start="\v\[\.\/(\w|\-|\*|\<|\>)*\]" end="\v\[\.\.\/\]" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord
+execute 'syn region mooTopBlock start="' . g:moose_fw_variables_topstart . '" end="'
+    \ . g:moose_fw_variables_topend . '" fold contains=ALLBUT,mooTodo,mooSubWord'
+execute 'syn region mooSubBlock matchgroup=mooSubWord start="' . g:moose_fw_variables_substart
+    \ . '" end="' . g:moose_fw_variables_subend . '" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord'
 syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
@@ -58,7 +60,7 @@ syn match mooType "\v<type((\s|\t)+)*\=" contained
 syn match mooActive "\v<active((\s|\t)+)*\=" contained
 
 " MOOSE sub-block words can be anything.
-syn match mooSubWord "\v\[\.\/(\w|\-|\*|\<|\>)*\]" contained
+execute 'syn match mooSubWord "' . g:moose_fw_variables_substart . '" contained'
 
 "" Highlighting Links
 " Set the script has run
