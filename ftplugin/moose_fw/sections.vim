@@ -1,7 +1,6 @@
 " Vim section movement file for MOOSE framework input files.
 " Language: MOOSE Framework input file
 " Creator: Xenon54z
-" Latest Revision: February 2017
 
 " Borrowed from 'Learn Vimscript the Hard Way'
 " Function to move section

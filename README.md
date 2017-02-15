@@ -2,15 +2,16 @@
 ---
 To help make writing [MOOSE](http://mooseframework.org/) input files easier on
 a common editor found on almost all remote computation resources, I want to
-make a VIM plugin that does the style right, highlights keywords, does folding,
-and does section movement correctly.
+make a Vim plugin that does the style right, highlights keywords, does folding,
+and does section movement correctly. Vim style documentation also included and
+accessed by `:help moose_fw`.
 
 ## INSTALLING
 ---
 ### Manual Method
-Inside the users home VIM directory (on Linux `.vim`) copy the contents of each
-subdirectory into the corresponding subdirectory. If a subdirectory does not
-exist then create that subdirectory. Ensure that syntax, indentation, and
+Inside the user's home Vim directory (on Linux `.vim`) copy the contents of
+each subdirectory into the corresponding subdirectory. If a subdirectory does
+not exist then create that subdirectory. Ensure that syntax, indentation, and
 folding is on by filetype.
 
 ### [Vundle](https://github.com/VundleVim/Vundle.vim) Method
@@ -21,6 +22,7 @@ the `.vimrc` to install:
 Plugin 'elementx54/moosefw_vim.git'
 ```
 Then update your plugins with the command `:PluginInstall` when running `vim`.
+To include the plugin's Vim style documentation, use the command `:PluginDocs`.
 
 ## CUSTOMIZATION
 ---

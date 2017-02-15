@@ -1,7 +1,6 @@
 " Vim constant variables for MOOSE framework input files.
 " Language: MOOSE Framework input file
 " Creator: Xenon54z
-" Latest Revision: February 2017
 
 " The goal is to load variables once and never change them. Then if future
 " development changes occur, this will be the only place the variable

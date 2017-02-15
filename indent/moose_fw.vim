@@ -1,7 +1,6 @@
 " Indent file for MOOSE framwork input file
 " Language: MOOSE Framework input file
 " Creator: Xenon54z
-" Latest Revision: January 2016
 
 " Much of this code was borrowed from pascal.vim
 

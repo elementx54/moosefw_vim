@@ -1,0 +1,124 @@
+*moose_fw.txt*     MOOSE Framework input file helper for Vim         *moose_fw*
+
+===============================================================================
+CONTENTS                                                    *moose_fw-contents*
+
+ Introduction                                           |moose_fw-introduction|
+ Installation                                           |moose_fw-installation|
+ Information                                             |moose_fw-information|
+ Configuration                                         |moose_fw-configuration|
+ License                                                     |moose_fw-license|
+
+===============================================================================
+INTRODUCTION                                            *moose_fw-introduction*
+
+This is a Vim plugin to facilitate the creation of MOOSE input files. The
+plugin defines the filetype of a MOOSE input file as `moose_fw`, being a
+unique filetype to this plugin.
+
+A `moose_fw` with this plugin features...
+
+  - automatic detection of `moose_fw` file with and without common extensions
+  - indentation correction, if desired, and automation
+  - syntax highlighting
+  - give user ability to fold based on syntax or indentation
+  - `moose_fw` Vim |section| movement 
+
+As MOOSE input files follow the GetPot structure, the `moose_fw` plugin might
+work well with any GetPot input file.
+
+===============================================================================
+INSTALLATION                                            *moose_fw-installation*
+
+The file structure of the `moose_fw` plugin should indicate the placement of
+each file in the user's home Vim directory. |vimfiles| |add-global-plugin|
+|add-local-help|
+
+The recommended method of installation is to use a Vim plugin manager, such as
+Vundle. https://github.com/VundleVim/Vundle.vim
+
+===============================================================================
+INFORMATION                                              *moose_fw-information*
+
+Most functionality of `moose_fw` plugin is automatic and being aware of it is
+probably sufficient for most users.
+-------------------------------------------------------------------------------
+*moose_fw-filetype*
+
+The plugin activates when the filetype equals 'moose_fw' in Vim. The
+traditional extension for MOOSE input files is '*.i' even though input file
+are structured text files.
+NOTE that this plugin invasively sets the filetype of '*.i' files to
+'moose_fw' by default.
+
+The plugin also detects MOOSE input file by searching the beginning of files
+for a pair of opening ([Label]) and closing ([]) lines.
+|g:moo_fw_search_file_disable| |g:moo_fw_search_lines|
+
+The use of a |modeline| is recommended as this will correctly identify the
+file by the user's specification.
+-------------------------------------------------------------------------------
+*moose_fw-indent*
+
+Indentation formating is neither a requirement of the GetPot structure or
+MOOSE input format. However, many still apply indentation for
+human-readability. The plugin will automatically change indent levels based on
+the current text being typed. Opening lines will increase the indent level of
+the next line. Closing lines will decrease the indent level of the current
+line. The change will only happen during typing after the closing bracket ']'
+has been typed.
+NOTE that the Vim command 'gg=G' will fix indentation to the entire file.
+-------------------------------------------------------------------------------
+*moose_fw-syntax*
+
+Syntax highlight is based entirely on MOOSE input keywords and MOOSE dump
+file format. Syntax highlighting will not and does not replace the knowledge
+of creating a correct MOOSE input file. Do not really on color to indicate a
+correct or false input for MOOSE. You have been warned.
+-------------------------------------------------------------------------------
+*moose_fw-fold*
+
+Folding method is left completely up to the user. Nothing is worse than having
+a plugin hide an entire file behind folds for a user who does not use or
+dislikes folds. Well, maybe something is worse than that, but it is still bad.
+The plugin creates a uniform indent and syntax strategy conducive to folding
+by either "indent" or "syntax". |foldmethod|
+-------------------------------------------------------------------------------
+*moose_fw-section*
+
+For |section| movement in Vim, the plugin provides the correct command for the
+behavior expected in a GetPot structured input file. The cursor will navigate
+to opening or closing lines in the direction given.
+NOTE that the two key presses must not have a long-ish delay between them or
+the cursor will move to the beginning or end of the file based on direction.
+
+===============================================================================
+CONFIGURATION                                          *moose_fw-configuration*
+
+Customization is allowed and encouraged. Since MOOSE is a framework from which
+other animals (apps) are built, specific behavior for inputs into these
+animals may be placed in the |after-directory|. A common use is for syntax
+keywords specific to the animal.
+-------------------------------------------------------------------------------
+*g:moo_fw_search_lines*
+
+Controls number of lines to search when determining the filetype. >
+    let g:moo_fw_search_lines = 50
+<   Defaults to 50 lines. |moose_fw-filetype|
+-------------------------------------------------------------------------------
+*g:moo_fw_search_file_disable*
+
+To disable searching of files to determine filetype, create the global
+variable: >
+    let g:moo_fw_search_file_disable = 1
+<   Defaults to being enabled (the variable does not exist).
+    |moose_fw-filetype|
+
+===============================================================================
+LICENSE                                                      *moose_fw-license*
+
+This software is licensed under the GNU Lesser General Public License version
+2.1, Copyright (C) 1991, 1999.
+Contributors to elementx54/moosefw_vim
+
+vim: ft=help

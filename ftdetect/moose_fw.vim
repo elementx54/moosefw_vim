@@ -1,7 +1,6 @@
 " Vim file to detect MOOSE framework input files.
 " Languages: MOOSE Framework input
 " Creator: Xenon54z
-" Latest Revision: January 2017
 
 " Detect file based on extension
 " Common input extension is .i
@@ -47,8 +46,8 @@ function! s:CheckMOOSEfwInput()
 endfunction
 
 if !exists('g:moo_fw_search_file_disable')
-    if !exists("autocommands_loaded_mfw")
-        let autocommands_loaded_mfw = 1
+    if !exists("b:autocommands_loaded_mfw")
+        let b:autocommands_loaded_mfw = 1
         autocmd BufRead * call s:CheckMOOSEfwInput()
     endif
 endif
