@@ -69,3 +69,14 @@ To disable searching files for bracket pairs identifying the file as a
 ```vim
 let g:moo_fw_search_file_disable = 1  " Defaults to being enabled.
 ```
+
+The input file extensions which could identify `moose_fw` filetype may be set
+with the global variable. The '*.' part is automatically applied to the list.
+```vim
+let g:moo_fw_extensions = ["i"]  " Defaults to ["i"] for '*.i' file names.
+```
+To disable file extension assignment of `moose_fw` filetype, set the global
+variable to an empty string.
+```vim
+let g:moo_fw_extensions = []  " Automatic detection still searches unless disabled.
+```

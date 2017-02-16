@@ -51,6 +51,12 @@ are structured text files.
 NOTE that this plugin invasively sets the filetype of '*.i' files to
 'moose_fw' by default.
 
+The extensions for MOOSE input files are stored in a list |g:moo_fw_extensions|
+allowing the user to specify file extensions. The plugin automatically adds
+'*.' to the beginning of each item in the list. Example: ["mi"] becomes "*.mi"
+when passed as the {pat} to the |autocmd|. Multiple extensions may be added to
+the list, ["i", "mi"].
+
 The plugin also detects MOOSE input file by searching the beginning of files
 for a pair of opening ([Label]) and closing ([]) lines.
 |g:moo_fw_search_file_disable| |g:moo_fw_search_lines|
@@ -113,6 +119,18 @@ variable: >
     let g:moo_fw_search_file_disable = 1
 <   Defaults to being enabled (the variable does not exist).
     |moose_fw-filetype|
+-------------------------------------------------------------------------------
+*g:moo_fw_extensions*
+
+File extensions which signify a MOOSE input file should be stored as a list in
+the global variable: >
+    let g:moo_fw_extensions = ["i"]
+<   Defaults to ["i"] signifying '*.i' files. |moose_fw-filetype|
+The setting of filetype by extension may be disabled by setting the global
+variable to an empty list: >
+    let g:moo_fw_extensions = []
+<   To completely disable filetype detection, |g:moo_fw_search_file_disable|
+    and this must both be set correctly. |moose_fw-filetype|
 
 ===============================================================================
 LICENSE                                                      *moose_fw-license*

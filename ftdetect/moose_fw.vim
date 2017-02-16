@@ -4,7 +4,13 @@
 
 " Detect file based on extension
 " Common input extension is .i
-autocmd BufRead,BufNewFile *.i set filetype=moose_fw
+if !exists('g:moo_fw_extensions')
+    let g:moo_fw_extensions = ["i"]
+endif
+if len(g:moo_fw_extensions) > 0
+    execute 'autocmd BufRead,BufNewFile *.' . join(g:moo_fw_extensions, ',*.')
+        \ . ' set filetype=moose_fw'
+endif
 
 " Example: MOOSE Framework input (*.moo)
 "au BufRead,BufNewFile *.moo set filetype=moose_fw
