@@ -105,6 +105,10 @@ Customization is allowed and encouraged. Since MOOSE is a framework from which
 other animals (apps) are built, specific behavior for inputs into these
 animals may be placed in the |after-directory|. A common use is for syntax
 keywords specific to the animal.
+
+NOTE that configuration variables MUST be defined before the |ftplugins| are
+turned on, which usually occurs in the user's |vimrc| file. If this
+requirement is a problem, please open an issue on the Git repository.
 -------------------------------------------------------------------------------
 *g:moo_fw_search_lines*
 

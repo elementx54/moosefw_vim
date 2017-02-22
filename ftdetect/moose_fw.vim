@@ -7,13 +7,13 @@
 if !exists('g:moo_fw_extensions')
     let g:moo_fw_extensions = ["i"]
 endif
-if len(g:moo_fw_extensions) > 0
-    execute 'autocmd BufRead,BufNewFile *.' . join(g:moo_fw_extensions, ',*.')
-        \ . ' set filetype=moose_fw'
-endif
-
-" Example: MOOSE Framework input (*.moo)
-"au BufRead,BufNewFile *.moo set filetype=moose_fw
+augroup moo_fw_auto_ext
+    autocmd!
+    if len(g:moo_fw_extensions) > 0
+        execute 'autocmd BufRead,BufNewFile *.'
+            \ . join(g:moo_fw_extensions, ',*.') . ' set filetype=moose_fw'
+    endif
+augroup END
 
 " NOTE: A modeline could also be used to set the filetype for any extension.
 " To use modelines, put this line at the start or end of your MOOSE input file.
@@ -25,6 +25,9 @@ endif
 "   let g:moo_fw_search_lines = 'smaller number' variable if loading files
 "   becomes slow.
 function! s:CheckMOOSEfwInput()
+"    if g:moo_fw_search_file_disable
+"        return
+"    endif
     if &filetype ==? "moose_fw"
         return
     endif
@@ -51,9 +54,9 @@ function! s:CheckMOOSEfwInput()
     endwhile
 endfunction
 
-if !exists('g:moo_fw_search_file_disable')
-    if !exists("b:autocommands_loaded_mfw")
-        let b:autocommands_loaded_mfw = 1
+augroup moo_fw_autodetect
+    autocmd!
+    if !exists('g:moo_fw_search_file_disable')
         autocmd BufRead * call s:CheckMOOSEfwInput()
     endif
-endif
+augroup END

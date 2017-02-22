@@ -58,6 +58,10 @@ autocmd FileType moose_fw setlocal foldmethod=syntax|indent foldignore=
 ```
 
 ### Default Configuration Values
+For many of the configuration values to work properly, the location of the
+command `filtype plugin on` in the `.vimrc` file MUST come after user defined
+configuration values.
+
 The number of lines to search the beginning of a file for a section pair of
 bracket sets `[]` identifying the file as a `moose_fw` filetype.
 ```vim
