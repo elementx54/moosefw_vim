@@ -52,7 +52,7 @@ syn keyword mooOper contained abs acos acosh arg asin atan atan2 atanh cbrt ceil
 syn match mooEscape "\v\\." display
 
 " MOOSE strings
-syn match mooString "\v(\"|\').*(\1)"
+syn match mooString "\v(\').*(\1)"
 
 " MOOSE type helps spot what a block or sub-block is about
 syn match mooType "\v<type((\s|\t)+)*\=" contained
