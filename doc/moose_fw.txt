@@ -97,6 +97,13 @@ behavior expected in a GetPot structured input file. The cursor will navigate
 to opening or closing lines in the direction given.
 NOTE that the two key presses must not have a long-ish delay between them or
 the cursor will move to the beginning or end of the file based on direction.
+-------------------------------------------------------------------------------
+*moose_fw-insert_pairs*
+
+A simple approach to inserting closing block pairs when the opener is typed is
+triggered on the press of the ']' key in |insert| mode. It does not execute
+when a comment is being typed or the preceding text does not match an opening
+block format. This does NOT check if a closer already exists.
 
 ===============================================================================
 CONFIGURATION                                          *moose_fw-configuration*
@@ -135,6 +142,14 @@ variable to an empty list: >
     let g:moo_fw_extensions = []
 <   To completely disable filetype detection, |g:moo_fw_search_file_disable|
     and this must both be set correctly. |moose_fw-filetype|
+-------------------------------------------------------------------------------
+*g:moo_fw_no_insert_pairs*
+
+To disable inserting closing block pairs when ']' is pressed, create the
+global variable: >
+    let g:moo_fw_no_insert_pairs = 1
+<   Defaults to being enabled (the variable does not exist).
+    |moose_fw-insert_pairs|
 
 ===============================================================================
 LICENSE                                                      *moose_fw-license*

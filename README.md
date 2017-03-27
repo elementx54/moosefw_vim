@@ -69,7 +69,7 @@ let g:moo_fw_search_lines = 50  " Defaults to 50 lines.
 ```
   
 To disable searching files for bracket pairs identifying the file as a
-`moose_fw` filetype, simply create the global variable.
+`moose_fw` filetype, create the global variable.
 ```vim
 let g:moo_fw_search_file_disable = 1  " Defaults to being enabled.
 ```
@@ -83,4 +83,10 @@ To disable file extension assignment of `moose_fw` filetype, set the global
 variable to an empty string.
 ```vim
 let g:moo_fw_extensions = []  " Automatic detection still searches unless disabled.
+```
+
+To disable the insertion of closing pairs when an opening pair has been typed,
+create the global variable.
+```vim
+let g:moo_fw_no_insert_pairs = 1  " Defaults to being enabled.
 ```
