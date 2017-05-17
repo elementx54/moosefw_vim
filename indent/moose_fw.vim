@@ -49,24 +49,24 @@ function! GetMOOSEfwIndent( line_num )
     " Begin the definitions of keywords for indent changing
     " Top Opener (such as [Kernels] )
     if prev_codeline =~? g:moose_fw_variables_topstart
-        return indnt + &shiftwidth
+        let indnt += &shiftwidth
     endif
 
     " Sub Opener (such as [./sub] )
     if prev_codeline =~? g:moose_fw_variables_substart
-        return indnt + &shiftwidth
+        let indnt += &shiftwidth
     endif
     
     " Top Closer [] (When not at beginning)
     if this_codeline =~? g:moose_fw_variables_topend[3:]
-        return indnt - &shiftwidth
+        let indnt -= &shiftwidth
     endif
 
     " Sub Closer [../]
     if this_codeline =~? g:moose_fw_variables_subend
-        return indnt - &shiftwidth
+        let indnt -= &shiftwidth
     endif
     
-    " Default case if nothing was special was found
+    " Return the net indent modification
     return indnt
 endfunction
