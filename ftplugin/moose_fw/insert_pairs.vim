@@ -50,8 +50,7 @@ function! s:CloseGetPot()
     let l:closer = s:NeedClosingPair()
     if l:closer !=# 'COMMENT' && l:closer !=# 'UNKNOWN' && l:closer !=# 'NULL'
         " We can place a closer on the next line down
-        execute 'silent normal! o' . l:closer . "\<ESC>F[". &shiftwidth . 
-                    \ "h" . &shiftwidth . "x"
+        execute 'silent normal! o' . l:closer . "\<ESC>"
         execute l:restore
         startinsert!
     endif
