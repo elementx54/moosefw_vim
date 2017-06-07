@@ -90,3 +90,8 @@ create the global variable.
 ```vim
 let g:moo_fw_no_insert_pairs = 1  " Defaults to being enabled.
 ```
+
+To disable the key maps for commenting, create the global variable.
+```vim
+let g:moo_fw_no_commenting = 1  " Defaults to being enabled.
+```
