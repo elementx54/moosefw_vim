@@ -33,7 +33,7 @@ function! s:CommentAtIndent(num_count)
     while l:i_c != a:num_count
         let l:i_c += 1
         if getline('.') =~? '\v^$'
-            " Treat blank lines special 
+            " Treat blank lines special
             execute 'silent normal! ' . l:comcol . 'i ' . "\<ESC>"
         elseif getline('.') =~? '\v^\s'
             execute 'silent normal! 0w'
