@@ -38,13 +38,15 @@ endfunction
 " Function to loop and place comments at specific column
 function! s:CommentAtIndent(num_count, direction)
     let l:comcol = s:SavedColumn(a:direction)
-    let l:lesscom = l:comcol - 1
+    let l:lesscom = l:comcol - 1 " Not in while loop
     let l:i_c = 0
     while l:i_c != a:num_count
         let l:i_c += 1
         if getline('.') =~? '\v^$'
             " Treat blank lines special since need end of line
-            execute 'silent normal! ' . l:lesscom . 'i ' . "\<ESC>"
+            if l:comcol > 1
+                execute 'silent normal! ' . l:lesscom . 'i ' . "\<ESC>"
+            endif
             execute 'silent normal! A#' . "\<ESC>"
         else
             if getline('.') =~? '\v^\s'
@@ -77,7 +79,7 @@ function! s:RemovePlacedComment(num_count, direction)
             " Begins line with '#'
             execute 'silent normal! 0x'
         elseif getline('.') =~? '\v^\s+\#\s*\S.*$'
-            " space and then comment with space or no space
+            " space and then comment with space or no space but stuff after it
             execute 'silent normal! 0wx'
         endif
         if a:direction
@@ -88,8 +90,15 @@ function! s:RemovePlacedComment(num_count, direction)
     endwhile
 endfunction
 
-" Mapping add comment and delete comments
-noremap <script> <buffer> <silent> <Leader>c :<C-U>call <SID>CommentAtIndent(v:count1, 0)<CR>
-noremap <script> <buffer> <silent> <Leader>x :<C-U>call <SID>RemovePlacedComment(v:count1, 0)<CR>
-noremap <script> <buffer> <silent> <Leader>C :<C-U>call <SID>CommentAtIndent(v:count1, 1)<CR>
-noremap <script> <buffer> <silent> <Leader>X :<C-U>call <SID>RemovePlacedComment(v:count1, 1)<CR>
+" Mapping add comment and delete comments (not in operator pending mode)
+nnoremap <script> <buffer> <silent> <Leader>c :<C-U>call <SID>CommentAtIndent(v:count1, 0)<CR>
+vnoremap <script> <buffer> <silent> <Leader>c :call <SID>CommentAtIndent(v:count1, 0)<CR>gv
+
+nnoremap <script> <buffer> <silent> <Leader>x :<C-U>call <SID>RemovePlacedComment(v:count1, 0)<CR>
+vnoremap <script> <buffer> <silent> <Leader>x :call <SID>RemovePlacedComment(v:count1, 0)<CR>gv
+
+nnoremap <script> <buffer> <silent> <Leader>C :<C-U>call <SID>CommentAtIndent(v:count1, 1)<CR>
+vnoremap <script> <buffer> <silent> <Leader>C :call <SID>CommentAtIndent(v:count1, 1)<CR>gv
+
+nnoremap <script> <buffer> <silent> <Leader>X :<C-U>call <SID>RemovePlacedComment(v:count1, 1)<CR>
+vnoremap <script> <buffer> <silent> <Leader>X :call <SID>RemovePlacedComment(v:count1, 1)<CR>gv

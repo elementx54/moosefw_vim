@@ -109,9 +109,12 @@ block format. This does NOT check if a closer already exists.
 
 MOOSE inputs allow for comments. A common practice when debugging an input
 file is to "comment out" part of the input file and rerun the input file. To
-aid with this work flow, typing [count]<Leader>c converts the lines to
-comments and typing [count]<Leader>x removes the comment conversion. An effort
-is made to preserve indentation and previous comment indentation.
+aid with this work flow, typing [count]<Leader>c|C converts the lines to
+comments and typing [count]<Leader>x|X removes the comment conversion. Lower
+case moves down the buffer, while upper case moves up the buffer. An effort is
+made to preserve indentation and previous|after comment indentation when in
+normal mode. Visual mode may or may not preserve comment indentation, but
+remains in visual mode after commenting is complete
 
 ===============================================================================
 CONFIGURATION                                          *moose_fw-configuration*
