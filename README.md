@@ -42,19 +42,12 @@ MOOSE input format is loosely based off a
 [GetPot](http://getpot.sourceforge.net/) input structure. The MOOSE input
 parser now allows for more flexibility between parent and child pairs.
 The syntax coloring is provided specifically for MOOSE keywords and
-can be customized. MOOSE input files traditionally end with `*.i`, but any
+can be customized. Syntax highlighting works best with the old MOOSE input
+structure. MOOSE input files traditionally end with `*.i`, but any
 ending may be used as this plugin can search the input file's beginning
 lines looking for a `[*Opening*]` and `[]` closing pair. This plugin identifies
 MOOSE input files as being `filetype=moose_fw`. The `moose_fw` stands for
 _MOOSE Framework_.
-
-Currently, this plugin works well with a single parent pair having multiple
-child pairs within it. This was in agreement with an old MOOSE input
-requirement. The new input file parser no longer requires this allowing parent
-pairs inside parent pairs. For the time being, this plugin has yet to be
-upgraded to the new style and many of the plugin features will not work
-properly. Open an issue if you'd like this a priority or comment on an already
-opened issue concerning the new input style.
 
 Although indentation formatting is not required, this plugin includes 
 indentation formatting based on user indentation settings. Auto-indentation

@@ -48,7 +48,8 @@ function! GetMOOSEfwIndent( line_num )
     
     " Begin the definitions of keywords for indent changing
     " Top Opener (such as [Kernels] )
-    if prev_codeline =~? g:moose_fw_variables_topstart
+    if prev_codeline =~? g:moose_fw_variables_topstart ||
+                \ prev_codeline =~? g:moose_fw_variables_newtop
         let indnt += &shiftwidth
     endif
 

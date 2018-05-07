@@ -23,6 +23,8 @@ function! s:NeedClosingPair()
         " Check which one if any is needed
         if l:linestring =~? g:moose_fw_variables_topstart
             let l:typecloser = '[]'
+        elseif l:linestring =~? g:moose_fw_variables_newtop
+            let l:typecloser = '[]'
         elseif l:linestring =~? g:moose_fw_variables_substart
             let l:typecloser = '[../]'
         else

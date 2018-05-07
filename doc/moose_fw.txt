@@ -20,12 +20,12 @@ A `moose_fw` with this plugin features...
 
   - automatic detection of `moose_fw` file with and without common extensions
   - indentation correction, if desired, and automation
-  - syntax highlighting
+  - syntax highlighting based off old MOOSE input structure
   - give user ability to fold based on syntax or indentation
   - `moose_fw` Vim |section| movement 
 
-As MOOSE input files follow the GetPot structure, the `moose_fw` plugin might
-work well with any GetPot input file.
+As MOOSE input files loosely follow the GetPot structure, the `moose_fw`
+plugin might work well with any GetPot input file.
 
 ===============================================================================
 INSTALLATION                                            *moose_fw-installation*
@@ -37,8 +37,9 @@ each file in the user's home Vim directory. |vimfiles| |add-global-plugin|
 The recommended method of installation is to use a Vim plugin manager, such as
 Vundle. https://github.com/VundleVim/Vundle.vim
 
-No matter the method of installation, the plugin works best when syntax,
-indentation, and folding are on by filetype.
+No matter the method of installation, the plugin works best when |syntax|,
+indentation, and |folding| are on by |filetype| depending on which plugin
+features are desired. |moose_fw-fold|
 
 ===============================================================================
 INFORMATION                                              *moose_fw-information*
@@ -81,9 +82,11 @@ NOTE that the Vim command 'gg=G' will fix indentation to the entire file.
 *moose_fw-syntax*
 
 Syntax highlight is based entirely on MOOSE input keywords and MOOSE dump
-file format. Syntax highlighting will not and does not replace the knowledge
-of creating a correct MOOSE input file. Do not really on color to indicate a
-correct or false input for MOOSE. You have been warned.
+file format. The highlighting works best on old style MOOSE input files.
+
+Syntax highlighting will not and does not replace the knowledge of creating a
+correct MOOSE input file. Do not really on color to indicate a correct or
+false input for MOOSE. You have been warned.
 -------------------------------------------------------------------------------
 *moose_fw-fold*
 

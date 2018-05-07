@@ -20,11 +20,13 @@ function! s:Move2Section(visual, direction, type)
     if a:type
         " Opening Section
         let pattern = '\v(' . g:moose_fw_variables_topstart[2:] . ')|('
-            \ . g:moose_fw_variables_substart[2:] . ')'
+            \ . g:moose_fw_variables_substart[2:] . ')|('
+            \ . g:moose_fw_variables_newtop[2:] . ')'
     else
         " Closing Section
         let pattern = '\v(' . g:moose_fw_variables_topend[2:] . ')|('
-            \ . g:moose_fw_variables_subend[2:] . ')'
+            \ . g:moose_fw_variables_subend[2:] . ')|('
+            \ . g:moose_fw_variables_newend[2:] . ')'
     endif
 
     execute 'silent normal! ' . dir . pattern . dir . flags . "\r"

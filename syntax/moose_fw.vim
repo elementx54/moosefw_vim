@@ -34,8 +34,10 @@ execute 'syn match mooComment "' . g:moose_fw_variables_comment . '" contains=mo
 " Define block regions
 execute 'syn region mooTopBlock start="' . g:moose_fw_variables_topstart . '" end="'
     \ . g:moose_fw_variables_topend . '" fold contains=ALLBUT,mooTodo,mooSubWord'
+execute 'syn region newmooTopBlock start="' . g:moose_fw_variables_newtop . '" end="'
+    \ . g:moose_fw_variables_newend . '" fold contains=ALLBUT,mooTodo,mooSubWord,mooTopBlock'
 execute 'syn region mooSubBlock matchgroup=mooSubWord start="' . g:moose_fw_variables_substart
-    \ . '" end="' . g:moose_fw_variables_subend . '" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord'
+    \ . '" end="' . g:moose_fw_variables_subend . '" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord,newmooTopBlock'
 syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
