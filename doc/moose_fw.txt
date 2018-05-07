@@ -37,6 +37,9 @@ each file in the user's home Vim directory. |vimfiles| |add-global-plugin|
 The recommended method of installation is to use a Vim plugin manager, such as
 Vundle. https://github.com/VundleVim/Vundle.vim
 
+No matter the method of installation, the plugin works best when syntax,
+indentation, and folding are on by filetype.
+
 ===============================================================================
 INFORMATION                                              *moose_fw-information*
 

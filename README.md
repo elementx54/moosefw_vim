@@ -12,7 +12,7 @@ accessed by `:help moose_fw`.
 Inside the user's home Vim directory (on Linux `.vim`) copy the contents of
 each subdirectory into the corresponding subdirectory. If a subdirectory does
 not exist then create that subdirectory. Ensure that syntax, indentation, and
-folding is on by filetype.
+folding are on by filetype.
 
 ### [Vundle](https://github.com/VundleVim/Vundle.vim) Method
 Assuming you have already set up
