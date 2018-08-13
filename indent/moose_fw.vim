@@ -47,6 +47,7 @@ function! GetMOOSEfwIndent( line_num )
     let indnt = indent( prev_codeline_num )
     
     " Begin the definitions of keywords for indent changing
+    "   Order does matter; put prev_codeline before this_codeline
     " Top Opener (such as [Kernels] )
     if prev_codeline =~? g:moose_fw_variables_topstart ||
                 \ prev_codeline =~? g:moose_fw_variables_newtop
@@ -56,6 +57,27 @@ function! GetMOOSEfwIndent( line_num )
     " Sub Opener (such as [./sub] )
     if prev_codeline =~? g:moose_fw_variables_substart
         let indnt += &shiftwidth
+    endif
+
+    " Single or double quote without matching pair ( ' " )
+    if prev_codeline =~? '\v(\=\s*'')|(\=\s*")' &&
+                \ prev_codeline !~? '\v(''.*'')|(".*")'
+        let indnt = match( prev_codeline, '\v('')|(")' ) + 1
+    endif
+    
+    " Single or double quote closer without matching open
+    if prev_codeline =~? '\v('')|(")' &&
+                \ prev_codeline !~? '\v(''.*'')|(".*")' &&
+                \ prev_codeline !~? '\v(\=\s*'')|(\=\s*")'
+        " Need to find previous indent of '=' line
+        let qline = a:line_num
+        while qline > 0
+            let qline = prevnonblank( qline - 1 )
+            if getline(qline) =~? '\v(\=\s*'')|(\=\s*")'
+                let indnt = indent( qline )
+                break
+            endif
+        endwhile
     endif
     
     " Top Closer [] (When not at beginning)
@@ -67,7 +89,7 @@ function! GetMOOSEfwIndent( line_num )
     if this_codeline =~? g:moose_fw_variables_subend
         let indnt -= &shiftwidth
     endif
-    
+
     " Return the net indent modification
     return indnt
 endfunction

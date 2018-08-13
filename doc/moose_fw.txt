@@ -76,7 +76,9 @@ human-readability. The plugin will automatically change indent levels based on
 the current text being typed. Opening lines will increase the indent level of
 the next line. Closing lines will decrease the indent level of the current
 line. The change will only happen during typing after the closing bracket ']'
-has been typed.
+has been typed. For long strings (such as mesh subdomains), the indentation
+will line up to the column directly after the first quote starting the string.
+The indentation level will return to normal after the closing quote is placed.
 NOTE that the Vim command 'gg=G' will fix indentation to the entire file.
 -------------------------------------------------------------------------------
 *moose_fw-syntax*
