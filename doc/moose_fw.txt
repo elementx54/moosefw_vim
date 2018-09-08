@@ -122,7 +122,7 @@ comments and typing [count]<Leader>x|X removes the comment conversion. Lower
 case moves down the buffer, while upper case moves up the buffer. An effort is
 made to preserve indentation and previous|after comment indentation when in
 normal mode. Visual mode may or may not preserve comment indentation, but
-remains in visual mode after commenting is complete
+remains in visual mode after commenting is complete.
 
 ===============================================================================
 CONFIGURATION                                          *moose_fw-configuration*
