@@ -37,7 +37,7 @@ execute 'syn region mooTopBlock start="' . g:moose_fw_variables_topstart . '" en
 execute 'syn region newmooTopBlock start="' . g:moose_fw_variables_newtop . '" end="'
     \ . g:moose_fw_variables_newend . '" fold contains=ALLBUT,mooTodo,mooSubWord,mooTopBlock'
 execute 'syn region mooSubBlock matchgroup=mooSubWord start="' . g:moose_fw_variables_substart
-    \ . '" end="' . g:moose_fw_variables_subend . '" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord,newmooTopBlock'
+    \ . '" end="' . g:moose_fw_variables_subend . '" fold transparent contained contains=ALLBUT,mooTodo,mooTopBlock,mooTopWord,mooSubWord'
 syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
