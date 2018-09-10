@@ -20,12 +20,11 @@ endif
 "" Functions for indenting correctly
 " Check previous line's indentation
 function! s:GetPrevNonCommentLineNum( line_num )
-    " Skip lines starting with a comment (Had to add start with to definition)
-    execute 'let SKIP_LINES = "\v^' . g:moose_fw_variables_comment[2:] . '"'
+    " Skip lines with only a comment
     let nline = a:line_num
     while nline > 0
         let nline = prevnonblank(nline-1)
-        if getline(nline) !~? SKIP_LINES
+        if getline(nline) !~? g:moose_fw_variables_onlycomment
             break
         endif
     endwhile
@@ -40,6 +39,9 @@ function! GetMOOSEfwIndent( line_num )
     endif
     " Let others get our value for any line
     let this_codeline = getline( a:line_num )
+    if this_codeline =~? g:moose_fw_variables_onlycomment
+        return indent( a:line_num )
+    endif
 
     " Get indentation of previous line
     let prev_codeline_num = s:GetPrevNonCommentLineNum( a:line_num )

@@ -17,6 +17,7 @@ let g:moose_fw_variables_subend = '\v\[\.\.\/\]'
 
 " Comments
 let g:moose_fw_variables_comment = '\v\#.*$'
+let g:moose_fw_variables_onlycomment = '\v^\s*\#.*$'
 
 " New MOOSE block definitions
 let g:moose_fw_variables_newtop = '\v\[(\w|\-|\/)*\w\]'
