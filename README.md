@@ -35,6 +35,16 @@ Plugin 'elementx54/moosefw_vim.git'
 Then update your plugins with the command `:PluginInstall` when running `vim`.
 To include the plugin's Vim style documentation, use the command `:PluginDocs`.
 
+### [vim-plug](https://github.com/junegunn/vim-plug) Method
+Assuming you have already set up
+[vim-plug](https://github.com/junegunn/vim-plug), place this plugin line in
+the `.vimrc` to install:
+```vim
+Plug 'elementx54/moosefw_vim'
+```
+Then update your plugins with the command `:PlugInstall` when running `vim`.
+The Vim style documentation should be updated as well.
+
 ## CUSTOMIZATION
 ---
 Feel free to change highlighting colors in the `syntax/moose_fw.vim` file or
