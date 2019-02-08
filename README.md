@@ -20,7 +20,8 @@ the `pack` directory create a folder structure ending with a `start` directory
 and place the plugin inside its own directory, such as:
 `~/.vim/pack/github/start/moosefw_vim`, then following the manual installation
 method placing the contents in `moosefw_vim` OR clone the repository into the
-directory (`git@github.com:elementx54/moosefw_vim.git moosefw_vim`).  
+directory
+(`git clone https://github.com/elementx54/moosefw_vim.git moosefw_vim`).  
 
 The plugin should usually **not** be placed in an optionally loaded (`opt`)
 directory due to the filetype detection being part of the plugin.
