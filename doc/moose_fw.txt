@@ -34,6 +34,9 @@ The file structure of the `moose_fw` plugin should indicate the placement of
 each file in the user's home Vim directory. |vimfiles| |add-global-plugin|
 |add-local-help|
 
+If using the Vim package manager, make sure the plugin is not optionally
+loaded as the filetype detection will not work. |packages|
+
 The recommended method of installation is to use a Vim plugin manager, such as
 Vundle. https://github.com/VundleVim/Vundle.vim
 

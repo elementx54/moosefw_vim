@@ -14,6 +14,17 @@ each subdirectory into the corresponding subdirectory. If a subdirectory does
 not exist then create that subdirectory. Ensure that syntax, indentation, and
 folding are on by filetype.
 
+### Native Vim Package Manager
+Vim has a native package manager loader for plugins (`:help packages`). Within
+the `pack` directory create a folder structure ending with a `start` directory
+and place the plugin inside its own directory, such as:
+`~/.vim/pack/github/start/moosefw_vim`, then following the manual installation
+method placing the contents in `moosefw_vim` OR clone the repository into the
+directory (`git@github.com:elementx54/moosefw_vim.git moosefw_vim`).  
+
+The plugin should usually **not** be placed in an optionally loaded (`opt`)
+directory due to the filetype detection being part of the plugin.
+
 ### [Vundle](https://github.com/VundleVim/Vundle.vim) Method
 Assuming you have already set up
 [Vundle](https://github.com/VundleVim/Vundle.vim), place this plugin line in
