@@ -44,7 +44,9 @@ the `.vimrc` to install:
 Plug 'elementx54/moosefw_vim'
 ```
 Then update your plugins with the command `:PlugInstall` when running `vim`.
-The Vim style documentation should be updated as well.
+The Vim style documentation should be updated as well.  
+_NOTE:_ Customization with Plug has an
+[open issue](https://github.com/elementx54/moosefw_vim/issues/15).
 
 ## CUSTOMIZATION
 ---
