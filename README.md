@@ -12,7 +12,7 @@ accessed by `:help moose_fw`.
 Inside the user's home Vim directory (on Linux `.vim`) copy the contents of
 each subdirectory into the corresponding subdirectory. If a subdirectory does
 not exist then create that subdirectory. Ensure that syntax, indentation, and
-folding are on by filetype.
+folding are on or enabled by filetype.
 
 ### Native Vim Package Manager
 Vim has a native package manager loader for plugins (`:help packages`). Within
