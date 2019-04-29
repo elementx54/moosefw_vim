@@ -59,6 +59,7 @@ syn match mooString "\v(\').*(\1)"
 " MOOSE type helps spot what a block or sub-block is about
 syn match mooType "\v<type((\s|\t)+)*\=" contained
 syn match mooActive "\v<active((\s|\t)+)*\=" contained
+syn match mooBlock "\v<block((\s|\t)+)*\=" contained
 
 " MOOSE sub-block words can be anything.
 execute 'syn match mooSubWord "' . g:moose_fw_variables_substart . '" contained'
@@ -83,6 +84,7 @@ hi def link mooOper         Operator
 hi def link mooEscape       VisualNOS
 hi def link mooString       String
 hi def link mooType         Type
+hi def link mooBlock        Type
 hi def link mooActive       WarningMsg
 hi def link mooSubWord      Identifier
 
