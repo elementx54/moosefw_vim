@@ -42,7 +42,7 @@ syn sync fromstart
 
 " Many of the following matches are borrowed from Daniel Schwen's Atom files.
 " Thanks Daniel! :D
-syn match mooTopWord "\v(\[)(Adaptivity|Bounds|DomainIntegral|Mesh|MeshModifiers|Modules|Kernels|AuxKernels|ScalarKernels|NodalKernels|AuxScalarKernels|Variables|AuxVariables|Materials|Postprocessors|BCs|ICs|Executioner|Outputs|Problem|Splits|Debug|Preconditioning|UserObjects|Functions|GlobalParams|VectorPostprocessors|Dampers|DiracKernels|DGKernels|Constraints|NodalNormals|CoupledProblems|DeprecatedBlock|MultiApps|Transfers|XFEM)(\])" contained
+syn match mooTopWord "\v(\[)(Adaptivity|Bounds|DomainIntegral|Mesh|MeshModifiers|Modules|Kernels|AuxKernels|ScalarKernels|NodalKernels|AuxScalarKernels|Variables|AuxVariables|Materials|Postprocessors|BCs|ICs|Executioner|Outputs|Problem|Splits|Debug|Preconditioning|UserObjects|Functions|GlobalParams|VectorPostprocessors|Dampers|DiracKernels|DGKernels|Constraints|NodalNormals|CoupledProblems|DeprecatedBlock|MultiApps|Transfers|XFEM|PerformanceMetricOutputs)(\]|\/)" contained
 syn keyword mooControl contained TimeStepper TimePeriods Quadrature Predictor Adaptivity Indicators Markers Periodic InitialCondition MortarInterfaces
 syn keyword mooOrder contained CONSTANT FIRST SECOND THIRD FOURTH FIFTH SIXTH SEVENTH EIGHTH NINTH
 syn keyword mooQuad contained LAGRANGE MONOMIAL HERMITE SCALAR HIERARCHIC CLOUGH XYZ SZABAB BERNSTEIN L2_LAGRANGE L2_HIERARCHIC
