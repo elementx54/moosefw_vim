@@ -21,7 +21,7 @@ and place the plugin inside its own directory, such as:
 `~/.vim/pack/github/start/moosefw_vim`, then following the manual installation
 method placing the contents in `moosefw_vim` OR clone the repository into the
 directory
-(`git clone https://github.com/elementx54/moosefw_vim.git moosefw_vim`).  
+(`git clone https://github.com/elementx54/moosefw_vim.git moosefw_vim`).
 
 The plugin should usually **not** be placed in an optionally loaded (`opt`)
 directory due to the filetype detection being part of the plugin.
@@ -44,7 +44,7 @@ the `.vimrc` to install:
 Plug 'elementx54/moosefw_vim'
 ```
 Then update your plugins with the command `:PlugInstall` when running `vim`.
-The Vim style documentation should be updated as well.  
+The Vim style documentation should be updated as well.
 _NOTE:_ Customization with Plug requires a specific order of operation. (See
 [this closed issue](https://github.com/elementx54/moosefw_vim/issues/15).)
 
@@ -73,7 +73,7 @@ lines looking for a `[*Opening*]` and `[]` closing pair. This plugin identifies
 MOOSE input files as being `filetype=moose_fw`. The `moose_fw` stands for
 _MOOSE Framework_.
 
-Although indentation formatting is not required, this plugin includes 
+Although indentation formatting is not required, this plugin includes
 indentation formatting based on user indentation settings. Auto-indentation
 occurs as text is entered, both forward and backward indents. To fix indents on
 an entire input file, use the Vim command in normal mode `gg=G`.
@@ -94,7 +94,7 @@ bracket sets `[]` identifying the file as a `moose_fw` filetype.
 ```vim
 let g:moo_fw_search_lines = 50  " Defaults to 50 lines.
 ```
-  
+
 To disable searching files for bracket pairs identifying the file as a
 `moose_fw` filetype, create the global variable.
 ```vim

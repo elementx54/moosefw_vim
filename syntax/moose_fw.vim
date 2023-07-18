@@ -11,7 +11,7 @@ endif
 syn match mooInteger "\v\w@<!\d+\w@!" display
 syn match mooInteger "\v\w@<![-+]\d+\w@!" display
 
-" Floating point number with decimal no E or e 
+" Floating point number with decimal no E or e
 syn match mooFloat "\v\d+\.\d*" display
 syn match mooFloat "\v[-+]\d+\.\d*" display
 
@@ -89,4 +89,3 @@ hi def link mooBlock        Type
 hi def link mooBound        Type
 hi def link mooActive       WarningMsg
 hi def link mooSubWord      Identifier
-

@@ -22,7 +22,7 @@ A `moose_fw` with this plugin features...
   - indentation correction, if desired, and automation
   - syntax highlighting based off old MOOSE input structure
   - give user ability to fold based on syntax or indentation
-  - `moose_fw` Vim |section| movement 
+  - `moose_fw` Vim |section| movement
 
 As MOOSE input files loosely follow the GetPot structure, the `moose_fw`
 plugin might work well with any GetPot input file.
