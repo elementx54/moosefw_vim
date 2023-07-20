@@ -81,12 +81,12 @@ an entire input file, use the Vim command in normal mode `gg=G`.
 The style of folding is left up to each individual user. Folding by syntax or
 indent can be set locally with an autocommand place in the `.vimrc` file.
 ```vim
-autocmd FileType moose_fw setlocal foldmethod=syntax|indent foldignore=
+autocmd FileType moose_fw setlocal foldmethod=syntax|indent
 ```
 
 ### Default Configuration Values
 For many of the configuration values to work properly, the location of the
-command `filtype plugin on` in the `.vimrc` file MUST come after user defined
+command `filetype plugin on` in the `.vimrc` file MUST come after user defined
 configuration values.
 
 The number of lines to search the beginning of a file for a section pair of
