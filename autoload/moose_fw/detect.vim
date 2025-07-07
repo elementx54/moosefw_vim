@@ -21,7 +21,7 @@ function! moose_fw#detect#CheckMOOSEfwInput()
             let sub = 1
             while sub <= check_lines
                 if getline(c + sub) =~? g:moose_fw_variables_topend
-                    set filetype=moose_fw
+                    setfiletype moose_fw
                     let sub += check_lines
                     let c += check_lines
                 endif
