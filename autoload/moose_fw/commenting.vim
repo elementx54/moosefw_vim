@@ -1,6 +1,5 @@
 " Autoload functions for ftplugin/moose_fw/commenting.vim.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Function to find column to place # in
 function! s:SavedColumn(direction)

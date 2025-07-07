@@ -1,6 +1,5 @@
 " Vim section movement file for MOOSE framework input files.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Similar to indent code but for placing closing block items
 " Check if wanted or not

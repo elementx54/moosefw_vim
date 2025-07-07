@@ -1,6 +1,5 @@
 " Autoload functions for ftdetect/moose_fw.vim.
 " Languages: MOOSE Framework input
-" Creator: Xenon54z
 
 " Detect file based on if contains a [Opener] and [] closer block.
 "   let g:moo_fw_search_lines = 'smaller number' variable if loading files

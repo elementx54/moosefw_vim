@@ -1,6 +1,5 @@
 " Vim syntax file for MOOSE framework input files.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 if exists("b:current_syntax")
     finish

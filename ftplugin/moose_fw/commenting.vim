@@ -1,6 +1,5 @@
 " Allow for easier method to comment blocks of MOOSE framework input files.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 if exists("g:moo_fw_no_commenting") || exists("b:did_commenting")
     finish

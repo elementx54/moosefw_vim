@@ -1,6 +1,5 @@
 " Autoload functions for ftplugin/moose_fw/sections.vim.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Borrowed from 'Learn Vimscript the Hard Way'
 " Function to move section

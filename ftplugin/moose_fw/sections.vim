@@ -1,6 +1,5 @@
 " Vim section movement file for MOOSE framework input files.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Mapping Section Movement Commands (Press them quickly together.)
 " Search towards end for closing section

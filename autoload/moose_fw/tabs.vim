@@ -1,6 +1,5 @@
 " Autoload functions for indent/moose_fw.vim.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Much of this code was borrowed from pascal.vim
 

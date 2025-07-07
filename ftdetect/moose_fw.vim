@@ -1,6 +1,5 @@
 " Vim file to detect MOOSE framework input files.
 " Languages: MOOSE Framework input
-" Creator: Xenon54z
 
 " Detect file based on extension
 " Common input extension is .i which collides with many others

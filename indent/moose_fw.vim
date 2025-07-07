@@ -1,6 +1,5 @@
 " Indent file for MOOSE framwork input file
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 if exists("b:did_indent")
     finish

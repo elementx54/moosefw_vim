@@ -1,6 +1,5 @@
 " Autoload functions for ftplugin/moose_fw/insert_pairs.vim.
 " Language: MOOSE Framework input file
-" Creator: Xenon54z
 
 " Save cursor position to get back to it
 function! s:SavePosition()
