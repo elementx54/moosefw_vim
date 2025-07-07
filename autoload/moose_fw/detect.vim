@@ -16,7 +16,12 @@ function! moose_fw#detect#CheckMOOSEfwInput()
     let c = 1
     while c <= check_lines
         if getline(c) =~? g:moose_fw_variables_topstart
-            " Found an opener
+            " Check if a test opener
+            if getline(c) =~? g:moose_fw_test_topstart
+                setfiletype moose_fw
+                return
+            endif
+            " Found a non-test opener
             let sub = 1
             while sub <= check_lines
                 if getline(c + sub) =~? g:moose_fw_variables_topend

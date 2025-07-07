@@ -66,7 +66,8 @@ when passed as the {pat} to the |autocmd|. Multiple extensions may be added to
 the list, ["i", "mi"].
 
 The plugin also detects MOOSE input file by searching the beginning of files
-for a pair of opening ([Label]) and closing ([]) lines.
+for a pair of opening ([Label]) and closing ([]) lines or for a test file
+opener "[Tests]".
 |g:moo_fw_search_file_disable| |g:moo_fw_search_lines|
 
 The use of a |modeline| is recommended as this will correctly identify the

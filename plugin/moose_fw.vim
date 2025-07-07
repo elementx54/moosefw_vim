@@ -9,6 +9,8 @@
 " Top Block Definitions
 let g:moose_fw_variables_topstart = '\v^\[(\w|\-)*\w\]'
 let g:moose_fw_variables_topend = '\v^\[\]'
+"  for tests, examples, or assessments
+let g:moose_fw_test_topstart = '\v^\[Tests\]'
 
 " Sub-block Definitions
 let g:moose_fw_variables_substart = '\v\[\.\/(\w|\-|\*|\<|\>)*\]'
