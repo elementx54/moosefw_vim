@@ -37,9 +37,8 @@ each file in the user's home Vim directory. |vimfiles| |add-global-plugin|
 If using the native Vim package manager, make sure the plugin is not
 optionally loaded as the filetype detection will not work. |packages|
 
-The recommended method of installation is to use a Vim plugin manager:
-Vundle https://github.com/VundleVim/Vundle.vim
-vim-plug https://github.com/junegunn/vim-plug
+The recommended method of installation is to use a Vim plugin manager like
+vim-plug https://github.com/junegunn/vim-plug .
 
 No matter the method of installation, the plugin works best when |syntax|,
 indentation, and |folding| are on or enabled by |filetype| depending on which

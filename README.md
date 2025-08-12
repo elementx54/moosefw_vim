@@ -26,16 +26,6 @@ directory
 The plugin should usually **not** be placed in an optionally loaded (`opt`)
 directory due to the filetype detection being part of the plugin.
 
-### [Vundle](https://github.com/VundleVim/Vundle.vim) Method
-Assuming you have already set up
-[Vundle](https://github.com/VundleVim/Vundle.vim), place this plugin line in
-the `.vimrc` to install:
-```vim
-Plugin 'elementx54/moosefw_vim.git'
-```
-Then update your plugins with the command `:PluginInstall` when running `vim`.
-To include the plugin's Vim style documentation, use the command `:PluginDocs`.
-
 ### [vim-plug](https://github.com/junegunn/vim-plug) Method
 Assuming you have already set up
 [vim-plug](https://github.com/junegunn/vim-plug), place this plugin line in
@@ -47,6 +37,20 @@ Then update your plugins with the command `:PlugInstall` when running `vim`.
 The Vim style documentation should be updated as well.
 _NOTE:_ Customization with Plug requires a specific order of operation. (See
 [this closed issue](https://github.com/elementx54/moosefw_vim/issues/15).)
+
+### [Vundle](https://github.com/VundleVim/Vundle.vim) Method (Unmaintained)
+<details>
+<summary>Historic Instructions</summary>
+
+Assuming you have already set up
+[Vundle](https://github.com/VundleVim/Vundle.vim), place this plugin line in
+the `.vimrc` to install:
+```vim
+Plugin 'elementx54/moosefw_vim.git'
+```
+Then update your plugins with the command `:PluginInstall` when running `vim`.
+To include the plugin's Vim style documentation, use the command `:PluginDocs`.
+</details>
 
 ## CUSTOMIZATION
 ---
